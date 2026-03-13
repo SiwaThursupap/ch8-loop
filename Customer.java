@@ -10,7 +10,7 @@ public class Customer {
     }
     
     public Customer(int cid){
-        this.customerID = 101 ;
+        this.customerID = customerID ;
     }
 
     public int getCustomerID(){
@@ -18,7 +18,7 @@ public class Customer {
         return customerID;
     }
     public void setCustomerID(int id){
-        this.customerID = customerID ;
+        this.customerID = 102 ;
     }
 
     private void showDetail(){
