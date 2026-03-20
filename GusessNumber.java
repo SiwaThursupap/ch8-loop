@@ -9,7 +9,10 @@ public class GusessNumber {
             Random rand = new Random();
             int guess = rand.nextInt(100);
             int number;
+            int count = 0;
+            boolean isOver = false;
             boolean isCorrect = false;
+            final int NUMBER_OF_GUESS = 5;
 
             while (!isCorrect) {
                 IO.print("Pease Enter Guess Numer : ");
@@ -25,10 +28,20 @@ public class GusessNumber {
                 if (number == guess) {
                     isCorrect = true;
                 }
-
+                count++;
+                IO.println("Remain to try : "+ (NUMBER_OF_GUESS-count));
+                if (count == 5){
+                    IO.println("Game Over!!");
+                    isOver = true;
+                    break; 
+                }
             }
+
+            if(isOver==false){
             IO.println("Congreaturation");
             IO.println("Your Score is : " + score);
+            }
+
         } catch (InputMismatchException e) {
             IO.println("Incorrect");
         } catch (Exception e) {
